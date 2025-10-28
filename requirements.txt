@@ -1,0 +1,11 @@
+Django>=4.1
+djangorestframework
+djangorestframework-simplejwt
+drf-spectacular
+django-filter
+pyotp
+tldextract
+celery
+redis
+psycopg2-binary
+django-celery-results
