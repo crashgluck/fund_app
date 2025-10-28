@@ -151,7 +151,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'cris.vera.olivares@gmail.com'
-EMAIL_HOST_PASSWORD = 'kujh fmbt erzr tzbi'
+EMAIL_HOST_PASSWORD = '#'
 DEFAULT_FROM_EMAIL = 'cris.vera.olivares@gmail.com'
 
 
