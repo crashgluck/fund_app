@@ -9,7 +9,7 @@ class UserAdmin(BaseUserAdmin):
     search_fields = ("email", "name")
     ordering = ("email",)
 
-    # Campos de solo lectura
+    # read only
     readonly_fields = ('created_at', 'updated_at')
 
     fieldsets = (

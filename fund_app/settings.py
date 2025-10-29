@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # Carga variables desde .env
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +45,7 @@ INSTALLED_APPS = [
      # django default...
     "rest_framework",
     "rest_framework_simplejwt",
+    'rest_framework_simplejwt.token_blacklist',
     "drf_spectacular",
     "django_filters",
     "django_celery_results",
@@ -150,9 +156,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'cris.vera.olivares@gmail.com'
-EMAIL_HOST_PASSWORD = 'kujh fmbt erzr tzbi'
-DEFAULT_FROM_EMAIL = 'cris.vera.olivares@gmail.com'
+
+
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = os.getenv("EMAIL_HOST_USER")
+FRONTEND_URL = os.getenv("FRONTEND_URL")
 
 
 CELERY_BROKER_URL = 'redis://localhost:6380/0'
